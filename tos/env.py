@@ -88,12 +88,13 @@ class Env(object):
                             pygame.K_s: self.save,
                         }[event.key]()
                     elif event.key in [pygame.K_UP, pygame.K_DOWN, pygame.K_LEFT, pygame.K_RIGHT]:
-                        self.gm.handle_move({
-                                                pygame.K_UP: 'UP',
-                                                pygame.K_DOWN: 'DOWN',
-                                                pygame.K_LEFT: 'LEFT',
-                                                pygame.K_RIGHT: 'RIGHT',
-                                            }[event.key])
+                        self.gm.handle_move(
+                            {
+                                pygame.K_UP: 'UP',
+                                pygame.K_DOWN: 'DOWN',
+                                pygame.K_LEFT: 'LEFT',
+                                pygame.K_RIGHT: 'RIGHT',
+                            }[event.key])
 
 
 if __name__ == '__main__':
