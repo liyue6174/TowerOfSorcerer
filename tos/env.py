@@ -67,31 +67,25 @@ class Env(object):
                     elif self.gm.hero_has_grail and event.key == pygame.K_g:
                         self.gm.handle_hero_grail()
                     elif self.gm.open_shop_number is not None:
-                        if event.key in [pygame.K_1, pygame.K_2, pygame.K_3, pygame.K_0]:
+                        if event.key in [pygame.K_1, pygame.K_2, pygame.K_3, pygame.K_0,
+                                         pygame.K_KP1, pygame.K_KP2, pygame.K_KP3, pygame.K_KP0]:
                             self.gm.handle_shop_event(
                                 {
                                     pygame.K_1: 1,
                                     pygame.K_2: 2,
                                     pygame.K_3: 3,
                                     pygame.K_0: 0,
-                                }[event.key]
-                            )
+                                    pygame.K_KP1: 1,
+                                    pygame.K_KP2: 2,
+                                    pygame.K_KP3: 3,
+                                    pygame.K_KP0: 0,
+                                }[event.key])
                     elif event.key in [pygame.K_a, pygame.K_q, pygame.K_r, pygame.K_s]:
-                        {
-                            pygame.K_a: self.load,
-                            pygame.K_q: self.quit,
-                            pygame.K_r: self.reset,
-                            pygame.K_s: self.save,
-                        }[event.key]()
+                        {pygame.K_a: self.load, pygame.K_q: self.quit, pygame.K_r: self.reset, pygame.K_s: self.save, }[
+                            event.key]()
                     elif event.key in [pygame.K_UP, pygame.K_DOWN, pygame.K_LEFT, pygame.K_RIGHT]:
-                        self.gm.handle_move(
-                            {
-                                pygame.K_UP: 'UP',
-                                pygame.K_DOWN: 'DOWN',
-                                pygame.K_LEFT: 'LEFT',
-                                pygame.K_RIGHT: 'RIGHT',
-                            }[event.key]
-                        )
+                        self.gm.handle_move({pygame.K_UP: 'UP', pygame.K_DOWN: 'DOWN', pygame.K_LEFT: 'LEFT',
+                            pygame.K_RIGHT: 'RIGHT', }[event.key])
 
 
 if __name__ == '__main__':
