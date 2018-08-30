@@ -81,11 +81,19 @@ class Env(object):
                                     pygame.K_KP0: 0,
                                 }[event.key])
                     elif event.key in [pygame.K_a, pygame.K_q, pygame.K_r, pygame.K_s]:
-                        {pygame.K_a: self.load, pygame.K_q: self.quit, pygame.K_r: self.reset, pygame.K_s: self.save, }[
-                            event.key]()
+                        {
+                            pygame.K_a: self.load,
+                            pygame.K_q: self.quit,
+                            pygame.K_r: self.reset,
+                            pygame.K_s: self.save,
+                        }[event.key]()
                     elif event.key in [pygame.K_UP, pygame.K_DOWN, pygame.K_LEFT, pygame.K_RIGHT]:
-                        self.gm.handle_move({pygame.K_UP: 'UP', pygame.K_DOWN: 'DOWN', pygame.K_LEFT: 'LEFT',
-                            pygame.K_RIGHT: 'RIGHT', }[event.key])
+                        self.gm.handle_move({
+                                                pygame.K_UP: 'UP',
+                                                pygame.K_DOWN: 'DOWN',
+                                                pygame.K_LEFT: 'LEFT',
+                                                pygame.K_RIGHT: 'RIGHT',
+                                            }[event.key])
 
 
 if __name__ == '__main__':
