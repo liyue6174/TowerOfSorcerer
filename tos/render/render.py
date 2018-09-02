@@ -102,9 +102,9 @@ class Render(object):
         elif self.gm.open_shop_number == 127:
             self.draw_font(35, 500, 775, 300, condition=self.gm.hero.exp >= 500)
         elif self.gm.open_shop_number == 153:
-            self.draw_font(35, 100, 875, 368, condition=self.gm.hero.exp >= 100)
-            self.draw_font(35, 30, 875, 423, condition=self.gm.hero.exp >= 30)
-            self.draw_font(35, 30, 875, 478, condition=self.gm.hero.exp >= 30)
+            self.draw_font(35, 100, 872, 371, condition=self.gm.hero.exp >= 100)
+            self.draw_font(35, 30, 872, 426, condition=self.gm.hero.exp >= 30)
+            self.draw_font(35, 30, 872, 481, condition=self.gm.hero.exp >= 30)
         elif self.gm.open_shop_number == 154:
             self.draw_font(35, 270, 872, 371, condition=self.gm.hero.exp >= 270)
             self.draw_font(35, 95, 877, 426, condition=self.gm.hero.exp >= 95)

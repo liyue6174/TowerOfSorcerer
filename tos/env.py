@@ -58,14 +58,6 @@ class Env(object):
                         self.gm.handle_hero_portal(event.key - pygame.K_a)
                     elif self.gm.show_attr_book_page:
                         self.gm.handle_hero_attr_book(event.key - pygame.K_l)
-                    elif self.gm.hero_has_portal and event.key == pygame.K_f:
-                        self.gm.handle_hero_portal(-1)
-                    elif self.gm.hero_has_attr_book and event.key == pygame.K_l:
-                        self.gm.handle_hero_attr_book(-1)
-                    elif self.gm.hero_has_cross and event.key == pygame.K_c:
-                        self.gm.handle_hero_cross()
-                    elif self.gm.hero_has_grail and event.key == pygame.K_g:
-                        self.gm.handle_hero_grail()
                     elif self.gm.open_shop_number is not None:
                         if event.key in [pygame.K_1, pygame.K_2, pygame.K_3, pygame.K_0,
                                          pygame.K_KP1, pygame.K_KP2, pygame.K_KP3, pygame.K_KP0]:
@@ -80,6 +72,14 @@ class Env(object):
                                     pygame.K_KP3: 3,
                                     pygame.K_KP0: 0,
                                 }[event.key])
+                    elif self.gm.hero_has_portal and event.key == pygame.K_f:
+                        self.gm.handle_hero_portal(-1)
+                    elif self.gm.hero_has_attr_book and event.key == pygame.K_l:
+                        self.gm.handle_hero_attr_book(-1)
+                    elif self.gm.hero_has_cross and event.key == pygame.K_c:
+                        self.gm.handle_hero_cross()
+                    elif self.gm.hero_has_grail and event.key == pygame.K_g:
+                        self.gm.handle_hero_grail()
                     elif event.key in [pygame.K_a, pygame.K_q, pygame.K_r, pygame.K_s]:
                         {
                             pygame.K_a: self.load,
